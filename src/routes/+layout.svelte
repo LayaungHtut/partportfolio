@@ -20,9 +20,11 @@
 	<div class="navbar-center">
 		<div class="flex-none">
 			<ul class="menu menu-horizontal px-1">
-				<li><a href="/">Link</a></li>
+				<li><a href="/education">Education</a></li>
 				<li><a href="/certificate">Certificates</a></li>
+				<li><a href="/skill">Skills</a></li>
 				<li><a href="/project">Projects</a></li>
+				<li><a href="/">Link</a></li>
 			</ul>
 		</div>
 	</div>
