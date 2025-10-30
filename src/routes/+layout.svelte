@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
-
 	import Doppelganger from '$lib/assets/images/Doppelganger.png';
 
 	let { children } = $props();
@@ -11,25 +10,31 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="navbar bg-base-100 shadow-sm">
-	<div class="navbar-start">
-		<div class="flex-1">
-			<a href="/" class="text-xl"><img class="w-16" src={Doppelganger} alt="Doppelganger" /></a>
-		</div>
-	</div>
-	<div class="navbar-center">
-		<div class="flex-none">
-			<ul class="menu menu-horizontal px-1">
-				<li><a href="/education">Education</a></li>
-				<li><a href="/certificate">Certificates</a></li>
-				<li><a href="/skill">Skills</a></li>
-				<li><a href="/project">Projects</a></li>
-				<li><a href="/">Link</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="navbar-end">
-		<div class="flex-none">
+<!-- Drawer wrapper -->
+<div class="drawer">
+	<!-- Drawer toggle (hidden checkbox) -->
+	<input id="main-drawer" type="checkbox" class="drawer-toggle" />
+
+	<!-- Page content -->
+	<div class="drawer-content flex flex-col">
+		<!-- Navbar -->
+		<div class="navbar bg-base-100 shadow-sm px-4">
+			<div class="flex-1">
+				<a href="/" class="text-xl">
+					<img class="w-14 md:w-16" src={Doppelganger} alt="Doppelganger" />
+				</a>
+			</div>
+
+			<!-- Desktop menu -->
+			<div class="hidden lg:flex flex-none">
+				<ul class="menu menu-horizontal px-1">
+					<li><a href="/education">Education</a></li>
+					<li><a href="/certificate">Certificates</a></li>
+					<li><a href="/skill">Skills</a></li>
+					<li><a href="/project">Projects</a></li>
+					<li><a href="/">Link</a></li>
+				</ul>
+			</div>
 			<label class="swap swap-rotate">
 				<!-- this hidden checkbox controls the state -->
 				<input type="checkbox" class="theme-controller" value="dark" hidden />
@@ -56,8 +61,47 @@
 					/>
 				</svg>
 			</label>
+			<!-- Right: theme + hamburger -->
+			<div class="flex-none lg:hidden">
+				<label for="main-drawer" class="btn btn-ghost btn-circle">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 6h16M4 12h16M4 18h16"
+						/>
+					</svg>
+				</label>
+			</div>
+
+			
+	
 		</div>
+
+		<!-- Main page content -->
+		<main class="p-4">
+			{@render children?.()}
+		</main>
+	</div>
+
+	<!-- Drawer sidebar (mobile menu) -->
+	 
+	<div class="drawer-side">
+		<label for="main-drawer" class="drawer-overlay"></label>
+		<ul class="menu bg-base-200 min-h-full w-80 p-4 text-lg">
+			<li><a href="/education">Education</a></li>
+			<li><a href="/certificate">Certificates</a></li>
+			<li><a href="/skill">Skills</a></li>
+			<li><a href="/project">Projects</a></li>
+			<li><a href="/">Link</a></li>
+			
+		</ul>
 	</div>
 </div>
-
-{@render children?.()}

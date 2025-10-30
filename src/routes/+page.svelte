@@ -65,11 +65,12 @@
 
 	<!-- Right Content -->
 	<div class="card flex items-center justify-center w-full lg:w-1/2 h-full rounded-none shadow-none">
-		<div class="avatar">
-  <div class="ring-primary ring-offset-base-100 w-full rounded-full ring-2 ring-offset-2">
-    <img alt="la_yaung_htut" src="https://img.daisyui.com/images/profile/demo/spiderperson@192.webp" />
-  </div>
-</div>
+		<figure class="hover-gallery max-w-60">
+  <img src="https://img.daisyui.com/images/stock/daisyui-hat-1.webp" />
+  <img src="https://img.daisyui.com/images/stock/daisyui-hat-2.webp" />
+  <img src="https://img.daisyui.com/images/stock/daisyui-hat-3.webp" />
+  <img src="https://img.daisyui.com/images/stock/daisyui-hat-4.webp" />
+</figure>
 	</div>
 </div>
 
