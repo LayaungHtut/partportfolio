@@ -32,7 +32,7 @@
 					<li><a href="/certificate">Certificates</a></li>
 					<li><a href="/skill">Skills</a></li>
 					<li><a href="/project">Projects</a></li>
-					<li><a href="/">Link</a></li>
+					<li><a href="/contact">Contact</a></li>
 				</ul>
 			</div>
 			<label class="swap swap-rotate">
@@ -100,8 +100,15 @@
 			<li><a href="/certificate">Certificates</a></li>
 			<li><a href="/skill">Skills</a></li>
 			<li><a href="/project">Projects</a></li>
-			<li><a href="/">Link</a></li>
+			<li><a href="/contact">Contact</a></li>
 			
 		</ul>
 	</div>
 </div>
+
+
+<footer class="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4">
+  <aside>
+    <p>  @ {new Date().getFullYear()} Web Development - La Yaung Htut</p>
+  </aside>
+</footer>
